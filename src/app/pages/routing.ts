@@ -6,6 +6,20 @@ const Routing: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
+    path: 'games',
+    loadChildren: () => import('../modules/game/game.module').then((m) => m.GameModule),
+    // data: { layout: 'light-sidebar' },
+  },
+
+
+
+
+
+
+
+
+
+  {
     path: 'builder',
     loadChildren: () => import('./builder/builder.module').then((m) => m.BuilderModule),
   },
