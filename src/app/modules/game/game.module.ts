@@ -4,11 +4,14 @@ import {InlineSVGModule} from "ng-inline-svg-2";
 import {CardsModule, DropdownMenusModule, WidgetsModule} from "../../_metronic/partials";
 import {SharedModule} from "../../_metronic/shared/shared.module";
 import {GameRoutingModule} from "./game-routing.module";
+import {GameListComponent} from "./game-list/game-list.component";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+      GameListComponent
+  ],
   imports: [
     CommonModule,
     GameRoutingModule,

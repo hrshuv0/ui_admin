@@ -1,36 +1,50 @@
 import {Component, OnInit} from '@angular/core';
 import {PageInfoService, PageLink} from "../../../_metronic/layout";
+import {GameService} from "../game.service";
 
 @Component({
     selector: 'app-game-list',
-    standalone: true,
-    imports: [],
     templateUrl: './game-list.component.html',
     styleUrl: './game-list.component.scss'
 })
 export class GameListComponent implements OnInit {
+    dataList: any[] = [];
 
-    breadCrumbsLinks: Array<PageLink>;
+    loading = false;
 
-    constructor(private pageInfo: PageInfoService) {
+
+    constructor(private pageInfo: PageInfoService,
+                private gameService: GameService) {
     }
 
     ngOnInit(): void {
         this.loadBreadCrumbsLinks();
+        this.loadData();
 
 
     }
 
+    loadData() {
+        this.loading = true;
+        this.gameService.load().subscribe({
+            next: res => {
+                this.dataList = res.data;
+                console.log(this.dataList);
+                this.loading = false;
+            }
+        });
+
+    }
 
     private loadBreadCrumbsLinks() {
-        this.breadCrumbsLinks = [
+        let breadCrumbsLinks: Array<PageLink> = [
             {
                 title: 'Dashboard',
                 path: '/',
                 isActive: false
             },
             {
-                title:'',
+                title: '',
                 path: '/',
                 isActive: false,
                 isSeparator: true
@@ -38,8 +52,7 @@ export class GameListComponent implements OnInit {
         ];
 
         this.pageInfo.updateTitle('Games');
-        this.pageInfo.updateBreadcrumbs(this.breadCrumbsLinks);
+        this.pageInfo.updateBreadcrumbs(breadCrumbsLinks);
     }
-
 
 }
