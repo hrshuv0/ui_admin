@@ -18,8 +18,8 @@ export class GameListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.loadBreadCrumbsLinks();
         this.loadData();
+        this.loadBreadCrumbsLinks();
 
 
     }
