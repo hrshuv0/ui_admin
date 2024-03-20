@@ -24,16 +24,16 @@ export class GameListComponent implements OnInit {
 
     }
 
-    loadData() {
+    loadData(): void {
         this.loading = true;
         this.gameService.load().subscribe({
             next: res => {
                 this.dataList = res.data;
-                console.log(this.dataList);
+            },
+            complete: () => {
                 this.loading = false;
             }
         });
-
     }
 
     private loadBreadCrumbsLinks() {
