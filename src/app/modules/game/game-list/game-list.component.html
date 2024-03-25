@@ -63,7 +63,7 @@
             </thead>
             <tbody class="fw-semibold text-gray-600">
 
-            <tr *ngFor="let data of dataList">
+            <tr *ngFor="let data of pagination.data">
                 <td *ngIf="false">
                     <div class="form-check form-check-sm form-check-custom form-check-solid">
                         <input class="form-check-input" type="checkbox" value="1"/>
@@ -123,6 +123,13 @@
             </tbody>
         </table>
         <!--end::Table-->
+        <app-pager
+            [pageNumber]="pagination.pageIndex"
+            [pageSize]="pagination.pageSize"
+            [totalCount]="pagination.count"
+        ></app-pager>
+
+
     </div>
     <!--end::Card body-->
 </div>

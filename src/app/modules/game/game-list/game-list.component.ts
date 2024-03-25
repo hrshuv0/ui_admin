@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PageInfoService, PageLink} from "../../../_metronic/layout";
 import {GameService} from "../game.service";
+import {Pagination} from "../../../shared/models/pagination";
 
 @Component({
     selector: 'app-game-list',
@@ -8,7 +9,8 @@ import {GameService} from "../game.service";
     styleUrl: './game-list.component.scss'
 })
 export class GameListComponent implements OnInit {
-    dataList: any[] = [];
+    // dataList: any[];
+    pagination: Pagination<any[]>;
 
     loading = false;
 
@@ -26,9 +28,12 @@ export class GameListComponent implements OnInit {
 
     loadData(): void {
         this.loading = true;
+
         this.gameService.load().subscribe({
-            next: res => {
-                this.dataList = res.data;
+            next: (res: Pagination<any>) => {
+                // this.dataList = res.data;
+                this.pagination = res;
+                console.log('data: ', this.pagination);
             },
             complete: () => {
                 this.loading = false;
