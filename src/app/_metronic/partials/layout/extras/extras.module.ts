@@ -10,7 +10,7 @@ import {TranslationModule} from '../../../../modules/i18n';
 import {SearchResultInnerComponent} from "./dropdown-inner/search-result-inner/search-result-inner.component";
 import {NgbTooltipModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
-import { SharedModule } from "../../../shared/shared.module";
+import { KeenSharedModule } from "../../../shared/keen-shared.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { SharedModule } from "../../../shared/shared.module";
     RouterModule,
     TranslationModule,
     NgbTooltipModule,
-    SharedModule
+      KeenSharedModule
   ],
   exports: [
     NotificationsInnerComponent,

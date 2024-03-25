@@ -11,7 +11,7 @@ import { Step2Component } from './steps/step2/step2.component';
 import { Step3Component } from './steps/step3/step3.component';
 import { Step4Component } from './steps/step4/step4.component';
 import { Step5Component } from './steps/step5/step5.component';
-import { SharedModule } from "../../_metronic/shared/shared.module";
+import { KeenSharedModule } from "../../_metronic/shared/keen-shared.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { SharedModule } from "../../_metronic/shared/shared.module";
     WizardsRoutingModule,
     ReactiveFormsModule,
     NgbTooltipModule,
-    SharedModule
+      KeenSharedModule
   ],
 })
 export class WizardsModule {}

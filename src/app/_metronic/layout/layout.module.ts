@@ -38,7 +38,7 @@ import { ClassicComponent } from './components/toolbar/classic/classic.component
 import { ExtendedComponent } from './components/toolbar/extended/extended.component';
 import { ReportsComponent } from './components/toolbar/reports/reports.component';
 import { SaasComponent } from './components/toolbar/saas/saas.component';
-import {SharedModule} from "../shared/shared.module";
+import {KeenSharedModule} from "../shared/keen-shared.module";
 
 const routes: Routes = [
   {
@@ -86,7 +86,7 @@ const routes: Routes = [
     NgbTooltipModule,
     TranslateModule,
     ThemeModeModule,
-    SharedModule
+      KeenSharedModule
   ],
   exports: [RouterModule],
 })

@@ -7,7 +7,7 @@ import {MainModalComponent} from './main-modal/main-modal.component';
 import {UpgradePlanModalComponent} from './upgrade-plan-modal/upgrade-plan-modal.component';
 import {ModalComponent} from './modal/modal.component';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
-import {SharedModule} from "../../../shared/shared.module";
+import {KeenSharedModule} from "../../../shared/keen-shared.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import {SharedModule} from "../../../shared/shared.module";
     InlineSVGModule,
     RouterModule,
     NgbModalModule,
-    SharedModule,
+      KeenSharedModule,
   ],
   exports: [
     InviteUsersModalComponent,

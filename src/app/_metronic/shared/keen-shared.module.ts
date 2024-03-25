@@ -13,5 +13,5 @@ import {CommonModule} from "@angular/common";
     KeeniconComponent
   ]
 })
-export class SharedModule {
+export class KeenSharedModule {
 }

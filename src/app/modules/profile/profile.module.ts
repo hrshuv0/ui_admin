@@ -13,7 +13,7 @@ import {
   DropdownMenusModule,
   WidgetsModule,
 } from '../../_metronic/partials';
-import { SharedModule } from "../../_metronic/shared/shared.module";
+import { KeenSharedModule } from "../../_metronic/shared/keen-shared.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { SharedModule } from "../../_metronic/shared/shared.module";
     DropdownMenusModule,
     WidgetsModule,
     CardsModule,
-    SharedModule
+      KeenSharedModule
   ],
 })
 export class ProfileModule {}

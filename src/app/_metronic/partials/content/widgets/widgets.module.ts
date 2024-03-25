@@ -84,7 +84,7 @@ import { CardsWidget7Component } from './_new/cards/cards-widget7/cards-widget7.
 import { TablesWidget16Component } from './_new/tables/tables-widget16/tables-widget16.component';
 import { NewChartsWidget8Component } from './_new/charts/new-charts-widget8/new-charts-widget8.component';
 import { CardsWidget18Component } from './_new/cards/cards-widget18/cards-widget18.component';
-import { SharedModule } from "../../../shared/shared.module";
+import { KeenSharedModule } from "../../../shared/keen-shared.module";
 @NgModule({
   declarations: [
     // Advanced Tables
@@ -173,7 +173,7 @@ import { SharedModule } from "../../../shared/shared.module";
     InlineSVGModule,
     NgApexchartsModule,
     NgbDropdownModule,
-    SharedModule
+      KeenSharedModule
   ],
   exports: [
     // Advanced Tables

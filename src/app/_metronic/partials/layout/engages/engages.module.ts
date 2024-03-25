@@ -5,7 +5,7 @@ import {InlineSVGModule} from 'ng-inline-svg-2';
 import {PurchaseToolbarComponent} from "./purchase-toolbar/purchase-toolbar.component";
 import {ExploreMainDrawerComponent} from './explore-main-drawer/explore-main-drawer.component';
 import {HelpDrawerComponent} from "./help-drawer/help-drawer.component";
-import {SharedModule} from "../../../shared/shared.module";
+import {KeenSharedModule} from "../../../shared/keen-shared.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {SharedModule} from "../../../shared/shared.module";
     CommonModule,
     InlineSVGModule,
     RouterModule,
-    SharedModule
+      KeenSharedModule
   ],
   exports: [
     ExploreMainDrawerComponent,
