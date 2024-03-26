@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {PageInfoService, PageLink} from "../../../_metronic/layout";
 import {GameService} from "../game.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
     selector: 'app-game-form',
@@ -17,7 +18,9 @@ export class GameFormComponent implements OnInit {
         private fb: FormBuilder,
         private route: ActivatedRoute,
         private pageInfo: PageInfoService,
-        private gameService: GameService) {
+        private gameService: GameService,
+        private toastr: ToastrService,
+        private router: Router) {
     }
 
     ngOnInit(): void {
@@ -45,7 +48,12 @@ export class GameFormComponent implements OnInit {
             return;
         }
 
-        this.gameService.save(this.formData.value).subscribe();
+        this.gameService.save(this.formData.value).subscribe({
+            next: res =>{
+                this.toastr.success(res.message, "Success");
+                this.router.navigateByUrl('games').then(r => r);
+            }
+        });
 
 
 
