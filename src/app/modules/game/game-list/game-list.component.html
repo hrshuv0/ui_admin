@@ -98,30 +98,13 @@
                 </td>
                 <td>
                     <div class="d-flex justify-content-end flex-shrink-0">
-                        <a
-                            href="#"
-                            class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-                        >
+                        <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" *ngIf="false" >
                             <app-keenicon name="switch" class="fs-3"></app-keenicon>
                         </a>
-                        <a
-                            href="#"
-                            class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-                        >
+                        <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" routerLink="edit/{{data.id}}">
                             <app-keenicon name="pencil" class="fs-3"></app-keenicon>
                         </a>
-                        <a
-                            href="#"
-                            class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                "
-                        >
+                        <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                             <app-keenicon name="trash" class="fs-3"></app-keenicon>
                         </a>
                     </div>
@@ -131,7 +114,8 @@
 
             </tbody>
         </table>
-        end::Table
+<!--        end::Table-->
+
         <app-pager
             [pageNumber]="pagination.pageIndex"
             [pageSize]="pagination.pageSize"

@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 import {PagerComponent} from "./components/pager/pager.component";
 import {KeenSharedModule} from "../_metronic/shared/keen-shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -11,12 +12,14 @@ import {KeenSharedModule} from "../_metronic/shared/keen-shared.module";
     ],
     exports: [
         PagerComponent,
-        KeenSharedModule
+        KeenSharedModule,
+        ReactiveFormsModule
     ],
     imports: [
         CommonModule,
         NgbPaginationModule,
-        KeenSharedModule
+        KeenSharedModule,
+        ReactiveFormsModule
     ]
 })
 export class SharedModule {

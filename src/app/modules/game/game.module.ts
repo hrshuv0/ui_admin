@@ -5,12 +5,14 @@ import {CardsModule, DropdownMenusModule, WidgetsModule} from "../../_metronic/p
 import {GameRoutingModule} from "./game-routing.module";
 import {GameListComponent} from "./game-list/game-list.component";
 import {SharedModule} from "../../shared/shared.module";
+import {GameFormComponent} from "./game-form/game-form.component";
 
 
 
 @NgModule({
   declarations: [
-      GameListComponent
+      GameListComponent,
+      GameFormComponent
   ],
     imports: [
         CommonModule,

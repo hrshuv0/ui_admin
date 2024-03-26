@@ -29,7 +29,7 @@ export class GameListComponent implements OnInit {
     loadData(): void {
         this.loading = true;
 
-        this.gameService.load().subscribe({
+        this.gameService.loadList().subscribe({
             next: (res: Pagination<any>) => {
                 // this.dataList = res.data;
                 this.pagination = res;

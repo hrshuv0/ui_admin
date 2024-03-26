@@ -12,11 +12,28 @@ export class GameService {
     constructor(private http: HttpClient) {
     }
 
-    load(): Observable<any> {
+    loadList(): Observable<any> {
         return this.http.get(this.baseUrl + 'games').pipe(
             map(res => {
                 return res;
             })
         );
+    }
+
+    loadForm(id: any) {
+        return this.http.get(this.baseUrl + 'games/' + id).pipe(
+            map(res =>{
+                return res;
+            })
+        );
+    }
+
+    save(value: any):Observable<any> {
+        return  this.http.post(this.baseUrl + 'games/save', value).pipe(
+            map(res =>{
+                return res;
+            })
+        );
+
     }
 }
