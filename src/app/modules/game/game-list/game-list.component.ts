@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PageInfoService, PageLink} from "../../../_metronic/layout";
 import {GameService} from "../game.service";
-import {Pagination} from "../../../shared/models/pagination";
+import {Filter, Pagination} from "../../../shared/models/pagination";
 
 @Component({
     selector: 'app-game-list',
@@ -11,6 +11,7 @@ import {Pagination} from "../../../shared/models/pagination";
 export class GameListComponent implements OnInit {
     // dataList: any[];
     pagination: Pagination<any[]>;
+    filter: Filter = new Filter;
 
     loading = false;
 
@@ -26,14 +27,14 @@ export class GameListComponent implements OnInit {
 
     }
 
-    loadData(): void {
+    loadData(filter?: Filter): void {
         this.loading = true;
 
-        this.gameService.loadList().subscribe({
+        this.gameService.loadList(filter).subscribe({
             next: (res: Pagination<any>) => {
                 // this.dataList = res.data;
                 this.pagination = res;
-                console.log('data: ', this.pagination);
+                // console.log('data: ', this.pagination);
             },
             complete: () => {
                 this.loading = false;
@@ -60,4 +61,9 @@ export class GameListComponent implements OnInit {
         this.pageInfo.updateBreadcrumbs(breadCrumbsLinks);
     }
 
+    onPageChange(pageIndex: any) {
+        this.filter.pageIndex = pageIndex;
+
+        this.loadData(this.filter);
+    }
 }
