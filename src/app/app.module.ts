@@ -15,6 +15,7 @@ import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 // #fake-start#
 import {FakeAPIService} from './_fake';
 import {errorInterceptor} from "./_interceptors/error.interceptor";
+import {ToastrModule} from "ngx-toastr";
 
 // #fake-end#
 
@@ -47,6 +48,7 @@ function appInitializer(authService: AuthService) {
         InlineSVGModule.forRoot(),
         NgbModule,
         SweetAlert2Module.forRoot(),
+        ToastrModule.forRoot()
     ],
     providers: [
         {
